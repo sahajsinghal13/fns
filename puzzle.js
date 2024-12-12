@@ -20,7 +20,6 @@ const selectOdds = function(array) {
   return odds;
 }
 
-
 const divideBy2 = function (array) {
   const half = [];
 
