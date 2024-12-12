@@ -19,8 +19,3 @@ const selectOdds = function(array) {
 
   return odds;
 }
-
-const testArray = [1, 2, 4, 9, 15, 16];
-
-console.log('Square Roots:', squareRoot(testArray));
-console.log('Odds:', selectOdds(testArray));
