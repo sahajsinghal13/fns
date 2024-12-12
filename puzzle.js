@@ -1,53 +1,59 @@
-const squareRoot = function (array) {
-  const sqrts = [];
-
-  for (const number of array) {
-    sqrts.push(Math.sqrt(number));
-  }
-
-  return sqrts;
+const squareRoot = function (number) {
+  return Math.sqrt(number);
 }
 
-const selectOdds = function(array) {
-  const odds = [];
+const selectOdds = function (number) {
+  if (number & 1) {
+    return number;
+  }
+}
 
-  for (const number of array) {
-    if (number & 1) {
-      odds.push(number);
+const half = function (number) {
+  return number / 2;
+}
+
+const lengthAbove = function (string) {
+  if (string.length > 5) {
+    return string;
+  }
+}
+
+const capitalise = function (string) {
+  return string.toUpperCase();
+}
+
+const selectFromArray = function (array) {
+  const selectives = [];
+
+  for (const element in array) {
+    if (array[element] !== undefined) {
+      selectives.push(array[element]);
     }
   }
 
-  return odds;
+  return selectives;
 }
 
-const divideBy2 = function (array) {
-  const half = [];
+const fnCall = function (fnName, array) {
+  const result = [];
 
-  for (const number of array) {
-    half.push(number / 2);
+  for (const element in array) {
+    result.push(fnName(array[element]));
   }
 
-  return half;
-}
-
-const strLengthAbove = function (array) {
-  const str = [];
-
-  for (const string of array) {
-    if (string.length > 5) {
-      str.push(string);
-    };
+  if (fnName === selectOdds || fnName === lengthAbove) {
+    return selectFromArray(result);
   }
 
-  return str;
+  return result;
 }
 
-const capitalise = function (array) {
-  const upperCase = [];
-
-  for (const string of array) {
-    upperCase.push(string.toUpperCase());
-  }
-
-  return upperCase;
+const test = function () {
+  console.log(fnCall(squareRoot, [1, 2, 4, 9]));
+  console.log(fnCall(selectOdds, [1, 2, 4, 9]));
+  console.log(fnCall(half, [1, 2, 4, 9]));
+  console.log(fnCall(lengthAbove, ['a', 'aaaaa', 'aaaaaa', 'aaaaaaa']));
+  console.log(fnCall(capitalise, ['a', 'aaaaa', 'aaaaaa', 'aaaaaaa']));
 }
+
+test();
