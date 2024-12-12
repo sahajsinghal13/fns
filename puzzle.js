@@ -29,3 +29,25 @@ const divideBy2 = function (array) {
 
   return half;
 }
+
+const strLengthAbove = function (array) {
+  const str = [];
+
+  for (const string of array) {
+    if (string.length > 5) {
+      str.push(string);
+    };
+  }
+
+  return str;
+}
+
+const capitalise = function (array) {
+  const upperCase = [];
+
+  for (const string of array) {
+    upperCase.push(string.toUpperCase());
+  }
+
+  return upperCase;
+}
