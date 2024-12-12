@@ -19,3 +19,14 @@ const selectOdds = function(array) {
 
   return odds;
 }
+
+
+const divideBy2 = function (array) {
+  const half = [];
+
+  for (const number of array) {
+    half.push(number / 2);
+  }
+
+  return half;
+}
